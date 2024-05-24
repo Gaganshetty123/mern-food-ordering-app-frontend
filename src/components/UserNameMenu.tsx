@@ -13,7 +13,12 @@ const UserNameMenu = () => {
             <CircleUserRound className="text-orange-500" />{user?.email?.split('@')[0]}
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-white shadow-md rounded-md p-2" style={{ backgroundColor: 'white' }}>
-                <DropdownMenuItem asChild>
+            <DropdownMenuItem>
+                    <Link to="/manage-restaurant" className="block font-bold hover:text-orange-500 px-2 py-1">
+                        Manage Restaurant
+                    </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
                     <Link to="/user-profile" className="block font-bold hover:text-orange-500 px-2 py-1">
                         User Profile
                     </Link>
