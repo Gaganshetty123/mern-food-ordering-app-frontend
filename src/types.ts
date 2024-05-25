@@ -51,3 +51,11 @@ export type OrderStatus =
     | "outForDelivery"
     | "delivered";
 
+export type RestaurantSearchResponse = {
+    data: Restaurant[];
+    pagination: {
+        total: number;
+        page: number;
+        pages: number;
+    };
+};
