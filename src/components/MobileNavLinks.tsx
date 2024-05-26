@@ -1,10 +1,15 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const MobileNavLinks = () => {
     const { logout } = useAuth0();
+
+    const handleLogout = () => {
+        const redirectUrl = import.meta.env.VITE_AUTH0_CALLBACK_URL || window.location.origin;
+        logout({ logoutParams: { returnTo: redirectUrl } });
+    };
+
     return (
         <>
             <Link
@@ -26,7 +31,7 @@ const MobileNavLinks = () => {
                 User Profile
             </Link>
             <Button
-                onClick={() => logout()}
+                onClick={handleLogout}
                 className="flex items-center px-3 font-bold hover:bg-gray-500"
             >
                 Log Out
