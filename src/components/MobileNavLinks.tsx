@@ -6,7 +6,8 @@ const MobileNavLinks = () => {
     const { logout } = useAuth0();
 
     const handleLogout = () => {
-        const redirectUrl = import.meta.env.VITE_AUTH0_CALLBACK_URL || window.location.origin;
+        const redirectUrl = import.meta.env.VITE_AUTH0_CALLBACK_URL;
+        console.log("Redirect URL:", redirectUrl);
         logout({ logoutParams: { returnTo: redirectUrl } });
     };
 
